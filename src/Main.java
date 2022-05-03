@@ -12,7 +12,7 @@ public class Main {
         mainFrame.setContentPane(new UhOhGame().getPanel1());
         mainFrame.pack();
         mainFrame.setVisible(true);
-        //just a a comment to see if github is working
+        //just a a comment to see if github is working!
 
     }
 
