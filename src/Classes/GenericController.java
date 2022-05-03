@@ -1,3 +1,5 @@
+package Classes;
+
 import Command.Command;
 
 public class GenericController {
