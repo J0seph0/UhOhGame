@@ -49,10 +49,10 @@ public class Methods {
         }
 
         //check for diagonal
-        if((buttons.get(2).equals(buttons.get(4))  && buttons.get(2).equals(buttons.get(6))) & buttons.get(2) != ""  ||
-                (buttons.get(8).equals(buttons.get(4))  && buttons.get(8).equals(buttons.get(4)) && buttons.get(8) != "") ||
-                (buttons.get(1).equals(buttons.get(4))  && buttons.get(7).equals(buttons.get(4)) && buttons.get(8) != "") ||
-                (buttons.get(3).equals(buttons.get(4))  && buttons.get(8).equals(buttons.get(4)) && buttons.get(8) != "")) {
+        if((buttons.get(2).equals(buttons.get(4))  && buttons.get(4).equals(buttons.get(6))) & buttons.get(2) != ""  ||
+                (buttons.get(0).equals(buttons.get(4))  && buttons.get(8).equals(buttons.get(4)) && buttons.get(4) != "") ||
+                (buttons.get(1).equals(buttons.get(4))  && buttons.get(7).equals(buttons.get(4)) && buttons.get(4) != "") ||
+                (buttons.get(3).equals(buttons.get(4))  && buttons.get(5).equals(buttons.get(4)) && buttons.get(4) != "")) {
             System.out.println(buttons.get(4) + " is the winner!");
         }
 
