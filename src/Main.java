@@ -9,6 +9,7 @@ public class Main {
         JFrame frame = new UhOhGame("Main Title");
         frame.setVisible(true);
 
+
         //end of basic setting for the gui
 
 
