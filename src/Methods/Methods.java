@@ -6,11 +6,13 @@ import java.util.ArrayList;
 public class Methods {
     //this is just a class for useful methods
     private static int counter = 0;
+
     //this sets x or o depending on whos turn it is
     public static void changeButtonText(JButton button) {
         if(button.getText().isBlank()) {
             if (counter == 0)
             {
+
                 button.setText("X");
                 counter = 1;
             }
@@ -19,7 +21,6 @@ public class Methods {
                 button.setText("O");
                 counter = 0;
             }
-            return;
         }
     }//end of change button text
 
@@ -28,11 +29,11 @@ public class Methods {
         //We need to check 3 locations, indexes: 0, 4, 8
 
         //check for the top left corner
-        if((buttons.get(0).equals(buttons.get(1)) && buttons.get(0).equals(buttons.get(2))) || (buttons.get(0).equals(buttons.get(3)) && buttons.get(0).equals(buttons.get(6)))) {
+        if((buttons.get(0).equals(buttons.get(1)) && buttons.get(0).equals(buttons.get(2)) && buttons.get(0) != "") || (buttons.get(0).equals(buttons.get(3)) && buttons.get(0).equals(buttons.get(6)) && buttons.get(0) != "")) {
             System.out.println(buttons.get(0) + " is the winner!");
         }
         //check for the bottom right corner
-        if((buttons.get(8) == buttons.get(7) && buttons.get(8) == buttons.get(6)) || (buttons.get(8) == buttons.get(5) && buttons.get(8) == buttons.get(2))) {
+        if((buttons.get(8).equals(buttons.get(7)) && buttons.get(8).equals(buttons.get(6)) && buttons.get(8) != "") || (buttons.get(8).equals(buttons.get(5)) && buttons.get(8).equals(buttons.get(2)) && buttons.get(8) != "" )) {
             System.out.println(buttons.get(8) + " is the winner!");
         }
     }

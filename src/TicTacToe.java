@@ -3,7 +3,6 @@ import Classes.GenericController;
 import Methods.Methods;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -11,16 +10,17 @@ import java.util.ArrayList;
 public class TicTacToe extends JFrame{
     private JPanel panel1;
     private JButton button1;
-    private JButton button2;
     private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
     private JButton button7;
-    private JButton button8;
     private JButton button9;
+    private JButton button4;
+    private JButton button6;
+    private JButton button2;
+    private JButton button5;
+    private JButton button8;
 
-    public static ArrayList<String> buttonText = new ArrayList<String>();
+    public ArrayList<String> buttonText = new ArrayList<String>();
+    public ArrayList<String> getButtonText() { return this.buttonText; }
 
 
 
@@ -55,63 +55,70 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button1);
                 addButtonsToList();
-
+                Methods.determineWinner(buttonText);
             }
-        });button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Methods.changeButtonText(button2);
-                addButtonsToList();
-
-            }
-        });button3.addActionListener(new ActionListener() {
+        });
+        button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button3);
                 addButtonsToList();
-
+                Methods.determineWinner(buttonText);
             }
-        });button4.addActionListener(new ActionListener() {
+        });
+        button7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Methods.changeButtonText(button7);
+                addButtonsToList();
+                Methods.determineWinner(buttonText);
+            }
+        });
+        button9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Methods.changeButtonText(button9);
+                addButtonsToList();
+                Methods.determineWinner(buttonText);
+            }
+        });
+        button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button4);
                 addButtonsToList();
-
-            }
-        });button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Methods.changeButtonText(button5);
-                addButtonsToList();
-
+                Methods.determineWinner(buttonText);
             }
         });button6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button6);
                 addButtonsToList();
-
+                Methods.determineWinner(buttonText);
             }
-        });button7.addActionListener(new ActionListener() {
+        });
+        button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Methods.changeButtonText(button7);
+                Methods.changeButtonText(button2);
                 addButtonsToList();
-
+                Methods.determineWinner(buttonText);
             }
-        });button8.addActionListener(new ActionListener() {
+        });
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Methods.changeButtonText(button5);
+                addButtonsToList();
+                Methods.determineWinner(buttonText);
+            }
+        });
+        button8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button8);
                 addButtonsToList();
-
-            }
-        });button9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Methods.changeButtonText(button9);
-                addButtonsToList();
-
+                Methods.determineWinner(buttonText);
             }
         });
 
