@@ -42,10 +42,21 @@ public class Methods {
             System.out.println(buttons.get(0) + " is the winner!");
         }
 
+        //check for the bottom right corner _|
         if((buttons.get(8).equals(buttons.get(7))  && buttons.get(8).equals(buttons.get(6))) & buttons.get(8) != ""  ||
                 (buttons.get(8).equals(buttons.get(5))  && buttons.get(8).equals(buttons.get(2)) && buttons.get(8) != "")) {
             System.out.println(buttons.get(8) + " is the winner!");
         }
+
+        //check for diagonal
+        if((buttons.get(2).equals(buttons.get(4))  && buttons.get(2).equals(buttons.get(6))) & buttons.get(2) != ""  ||
+                (buttons.get(8).equals(buttons.get(4))  && buttons.get(8).equals(buttons.get(4)) && buttons.get(8) != "") ||
+                (buttons.get(1).equals(buttons.get(4))  && buttons.get(7).equals(buttons.get(4)) && buttons.get(8) != "") ||
+                (buttons.get(3).equals(buttons.get(4))  && buttons.get(8).equals(buttons.get(4)) && buttons.get(8) != "")) {
+            System.out.println(buttons.get(4) + " is the winner!");
+        }
+
+
     }
 
     public boolean checkIfGridIsFull() {
