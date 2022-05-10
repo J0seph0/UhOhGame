@@ -19,22 +19,21 @@ public class TicTacToe extends JFrame{
     private JButton button5;
     private JButton button8;
 
-    public ArrayList<String> buttonText = new ArrayList<String>();
-    public ArrayList<String> getButtonText() { return this.buttonText; }
+    public static ArrayList<String> buttonText = new ArrayList<String>();
 
 
 
     public void addButtonsToList() {
         buttonText.clear();
         buttonText.add(button1.getText());
-        buttonText.add(button2.getText());
         buttonText.add(button3.getText());
-        buttonText.add(button4.getText());
-        buttonText.add(button5.getText());
-        buttonText.add(button6.getText());
         buttonText.add(button7.getText());
-        buttonText.add(button8.getText());
         buttonText.add(button9.getText());
+        buttonText.add(button4.getText());
+        buttonText.add(button6.getText());
+        buttonText.add(button2.getText());
+        buttonText.add(button5.getText());
+        buttonText.add(button8.getText());
     }
 
     public TicTacToe(String title){
@@ -45,6 +44,11 @@ public class TicTacToe extends JFrame{
         addButtonsToList();
         //since we extend jframe now this class will ack like a frame
         this.setSize(500,500);
+
+//        //another way to set grid appearance
+//        JFrame jFrame = new JFrame("Tic Tac Toe Game");
+//        jFrame.setBounds(500, 500, 600, 550);
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(this.panel1);
         this.pack();
@@ -64,6 +68,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button3);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
         button7.addActionListener(new ActionListener() {
@@ -72,6 +77,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button7);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
         button9.addActionListener(new ActionListener() {
@@ -80,6 +86,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button9);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
         button4.addActionListener(new ActionListener() {
@@ -88,6 +95,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button4);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });button6.addActionListener(new ActionListener() {
             @Override
@@ -95,6 +103,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button6);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -103,6 +112,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button2);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
         button5.addActionListener(new ActionListener() {
@@ -111,6 +121,7 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button5);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
         button8.addActionListener(new ActionListener() {
@@ -119,11 +130,14 @@ public class TicTacToe extends JFrame{
                 Methods.changeButtonText(button8);
                 addButtonsToList();
                 Methods.determineWinner(buttonText);
+
             }
         });
 
         }
 
 
-
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
