@@ -39,7 +39,6 @@ public class UhOhGame extends JFrame{
 
 
 
-
     }//end of UhOhConstructor
 
     private void createUIComponents() {
