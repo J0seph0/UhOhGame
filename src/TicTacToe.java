@@ -23,7 +23,6 @@ public class TicTacToe extends JFrame{
     public ArrayList<String> getButtonText() { return this.buttonText; }
 
 
-
     public void addButtonsToList() {
         buttonText.clear();
         buttonText.add(button1.getText());
