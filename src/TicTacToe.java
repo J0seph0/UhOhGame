@@ -43,7 +43,6 @@ public class TicTacToe extends JFrame{
         //just put all of the buttons into a list
         addButtonsToList();
         //since we extend jframe now this class will ack like a frame
-        this.setSize(500,500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(this.panel1);
         this.pack();
@@ -54,7 +53,9 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button1);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button3.addActionListener(new ActionListener() {
@@ -62,7 +63,9 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button3);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button7.addActionListener(new ActionListener() {
@@ -70,7 +73,9 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button7);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button9.addActionListener(new ActionListener() {
@@ -78,7 +83,9 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button9);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button4.addActionListener(new ActionListener() {
@@ -86,14 +93,18 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button4);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });button6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button6);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -101,7 +112,9 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button2);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button5.addActionListener(new ActionListener() {
@@ -109,7 +122,9 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button5);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
         button8.addActionListener(new ActionListener() {
@@ -117,10 +132,25 @@ public class TicTacToe extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Methods.changeButtonText(button8);
                 addButtonsToList();
-                Methods.determineWinner(buttonText);
+                if(Methods.determineWinner(buttonText)){
+                    clearAllButtons();
+                }
             }
         });
 
+        }
+
+        public void clearAllButtons(){
+            this.buttonText.clear();
+            button1.setText("");
+            button2.setText("");
+            button3.setText("");
+            button4.setText("");
+            button5.setText("");
+            button6.setText("");
+            button7.setText("");
+            button8.setText("");
+            button9.setText("");
         }
 
 

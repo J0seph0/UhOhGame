@@ -20,7 +20,7 @@ public class UhOhGame extends JFrame{
         controller.setAction(new GenericActions());
 
         //since we extend jframe now this class will ack like a frame
-        this.setSize(500,500);
+        //this.setSize(500,500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(this.panel1);
         this.pack();
@@ -31,10 +31,12 @@ public class UhOhGame extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 UhOhGame.super.dispose();
                 JFrame ticTacToeScreen = new TicTacToe("TicTacToe");
+                ticTacToeScreen.setSize(1000, 700);
                 ticTacToeScreen.setVisible(true);
                 System.out.println("Hello console");
             }
         });
+
 
 
 
