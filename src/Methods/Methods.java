@@ -40,6 +40,9 @@ public class Methods {
         if((buttons.get(0).equals(buttons.get(1)) && buttons.get(0).equals(buttons.get(2))) && buttons.get(0) != "" ||
                 (buttons.get(0).equals(buttons.get(3)) && buttons.get(0).equals(buttons.get(6)) && buttons.get(0) != "")) {
             System.out.println(buttons.get(0) + " is the winner!");
+
+//            JFrame winnerWindow = new JFrame("The winner is");
+
         }
 
 //check for the bottom right corner _|
