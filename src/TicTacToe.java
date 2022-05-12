@@ -5,7 +5,9 @@ import Methods.Methods;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TicTacToe extends JFrame{
     private JPanel panel1;
@@ -43,9 +45,15 @@ public class TicTacToe extends JFrame{
                 public void actionPerformed(ActionEvent e) {
                     Methods.changeButtonText(button);
                     addButtonsTextToList();
+                    if(openSpaces() > 1)
+                    {
+                        simpleAIButtonChanger();
+                    }
                     if(Methods.determineWinner(buttonText)){
+                        Methods.counter = 0;
                         clearAllButtons();
                     }
+
                 }
             });
         }
@@ -89,5 +97,27 @@ public class TicTacToe extends JFrame{
         listOfButtons.add(button8);
         listOfButtons.add(button9);
     }
+        //method to choose a button from the array list of buttons and changes the text
+        public void simpleAIButtonChanger(){
+            Random rand = new Random();
+            // so we have the button we have to first get the index of that button
+            int randomIndex = rand.ints(0,9).findFirst().getAsInt();
 
+            //we want to find a new random number if the randomindex found contains a letter so is not empty
+            while(this.buttonText.get(randomIndex) != "")
+            {
+                randomIndex = rand.ints(0,9).findFirst().getAsInt();
+            }
+
+            Methods.changeButtonText(this.listOfButtons.get(randomIndex));
+        }
+        //a method returning an int that is how many open spaces there are
+        public int openSpaces(){
+            int openSpaceCounter = 0;
+            for (String text: buttonText)
+            {
+                if(text.equals("")) { openSpaceCounter++; }
+            }
+            return openSpaceCounter;
+        }
 }
