@@ -49,7 +49,7 @@ public class Achievements implements Observer {
         }
     }
 
-    private void unlock(Achievement ach) {
+    public void unlock(Achievement ach) {
         if(!achievements.contains(ach)) {
             achievements.add(ach);
             System.out.println("ACHIEVEMENT UNLOCKED: " + ach.getDescription());
