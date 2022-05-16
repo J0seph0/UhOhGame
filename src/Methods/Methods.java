@@ -88,11 +88,8 @@ public class Methods {
 
 
     public static void setUpWinnerWindow(JFrame window){
-        window.setSize(500, 500);
-        window.setVisible(true);
         JOptionPane winnerPane = new JOptionPane(" is the winner" );
-        window.setContentPane(winnerPane);
-        winnerPane.setMessage("The winner is " + winnerString);
+        winnerPane.showMessageDialog(null, "The winner is: " + winnerString);
 
     }
     public static String whichIsWinner(){
