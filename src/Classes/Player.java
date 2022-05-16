@@ -4,6 +4,7 @@ import Observer.Observable;
 import Observer.Observer;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 public class Player implements Observable {
 
@@ -31,4 +32,5 @@ public class Player implements Observable {
     public void removeObserver(Observer o) {
         observers.remove(o);
     }
+
 }
