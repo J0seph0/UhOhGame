@@ -17,6 +17,7 @@ public class Main {
         JFrame frame = new UhOhGame("Main Title");
         frame.setSize(1000, 1000);
         frame.setVisible(true);
+
         Player p1 = new Player();
         Achievements achievements = new Achievements();
         p1.addObserver(achievements);
