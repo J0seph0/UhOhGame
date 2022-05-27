@@ -26,6 +26,9 @@ public class TicTacToe extends JFrame{
     public ArrayList<String> getButtonText() { return this.buttonText; }
 
 
+    /**
+     * @param title
+     */
     public TicTacToe(String title){
         super(title);
         GenericController controller = new GenericController();
@@ -45,6 +48,7 @@ public class TicTacToe extends JFrame{
                 public void actionPerformed(ActionEvent e) {
                     Methods.changeButtonText(button);
                     addButtonsTextToList();
+                    //need to check if there are no open spaces when a button is pressed then no one wins and it just resets
                     if(openSpaces() > 1)
                     {
                         simpleAIButtonChanger();
@@ -60,6 +64,10 @@ public class TicTacToe extends JFrame{
 
         }
 
+    /**
+     * This method sets all the buttons in the arraylist to be empty
+     *
+     */
         //these populate or delete all of the button text in the list
         public void clearAllButtons(){
             this.buttonText.clear();
@@ -73,6 +81,10 @@ public class TicTacToe extends JFrame{
             button8.setText("");
             button9.setText("");
         }
+
+    /**
+     * This method adds all the buttons' text to the arraylist buttonText
+     */
         public void addButtonsTextToList() {
         buttonText.clear();
         buttonText.add(button1.getText());
@@ -85,6 +97,10 @@ public class TicTacToe extends JFrame{
         buttonText.add(button8.getText());
         buttonText.add(button9.getText());
     }
+
+    /**
+     * This method adds the buttons to a arraylist containing Jbuttons
+     */
         public void addButtonsToList() {
         listOfButtons.clear();
         listOfButtons.add(button1);
@@ -97,7 +113,11 @@ public class TicTacToe extends JFrame{
         listOfButtons.add(button8);
         listOfButtons.add(button9);
     }
-        //method to choose a button from the array list of buttons and changes the text
+
+    /**
+     * This method is a basic form of ai that picks a random number in the array of buttons that isn't already filled
+     * and changes the text
+     */
         public void simpleAIButtonChanger(){
             Random rand = new Random();
             // so we have the button we have to first get the index of that button
@@ -108,9 +128,15 @@ public class TicTacToe extends JFrame{
             {
                 randomIndex = rand.ints(0,9).findFirst().getAsInt();
             }
-
+            // TODO add a check to see if ai won
             Methods.changeButtonText(this.listOfButtons.get(randomIndex));
         }
+
+    /**
+     * This method goes through the buttontext arraylist and checks how many empty strings there are.
+     *
+     * @return an int containing how many empty buttons there are
+     */
         //a method returning an int that is how many open spaces there are
         public int openSpaces(){
             int openSpaceCounter = 0;

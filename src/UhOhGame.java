@@ -13,6 +13,9 @@ public class UhOhGame extends JFrame{
     private JLabel titleLabel;
 
 
+    /**
+     * @param title
+     */
     public UhOhGame(String title){
         //going to create a basic controller just a setup to see what it'll be like
         super(title);
