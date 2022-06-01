@@ -1,6 +1,3 @@
-import Actions.GenericActions;
-import Classes.GenericController;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,22 +11,25 @@ public class UhOhGame extends JFrame{
 
 
     /**
-     * @param title
+     * @param title - this is the title of the window
+     *  This is the constructor that extends JFrame so that we can make a window by creating an UhOhGame object rather than a Jframe
+     *  This window just needs a way to say hello and let you open tic tac toe if you would like
      */
     public UhOhGame(String title){
         //going to create a basic controller just a setup to see what it'll be like
         super(title);
-        GenericController controller = new GenericController();
-        controller.setAction(new GenericActions());
-
         //since we extend jframe now this class will ack like a frame
-        //this.setSize(500,500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(this.panel1);
         this.pack();
 
         // Do something button that
         ticTacToeButton.addActionListener(new ActionListener() {
+            /**
+             * @param e
+             * This is the action assignment for the button
+             * We want this button to delete this window and then open the tictactoe frame
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 UhOhGame.super.dispose();
@@ -41,14 +41,6 @@ public class UhOhGame extends JFrame{
         });
 
 
-
-
-
     }//end of UhOhConstructor
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-
-    }
-    public JPanel getPanel1(){return this.panel1; }
 }

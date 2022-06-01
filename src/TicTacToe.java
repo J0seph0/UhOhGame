@@ -1,15 +1,15 @@
-import Actions.GenericActions;
-import Classes.GenericController;
 import Methods.Methods;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class TicTacToe extends JFrame{
+    /**
+     * A set of 9 buttons and a Jpanel to put those buttons is needed
+     */
     private JPanel panel1;
     private JButton button1;
     private JButton button3;
@@ -21,18 +21,26 @@ public class TicTacToe extends JFrame{
     private JButton button5;
     private JButton button8;
 
+    /**
+     * An arrayList of Jbuttons to we can modify the buttons action listener a bit more efficiently
+     */
     public ArrayList<JButton> listOfButtons = new ArrayList<JButton>();
+
+    /**
+     * An arrayList of Strings this time to access the contents of all the buttons in the form of a list where it reads left to right off the board
+     */
     public ArrayList<String> buttonText = new ArrayList<String>();
     public ArrayList<String> getButtonText() { return this.buttonText; }
 
 
     /**
-     * @param title
+     * @param title - This is the name of the window
+     * This is the constructor that since this class extends JFrame we can new up a TicTacToe object as if it were a JFrame but we have
+     * our own settings for the panel, extending it like this makes is cleaner.
+     * We have to call super to make the frame since we are extending it, then we can set our settings for the buttons and sizes etc...
      */
     public TicTacToe(String title){
         super(title);
-        GenericController controller = new GenericController();
-        controller.setAction(new GenericActions());
         //just put all of the buttons into a list
         addButtonsToList();
         //since we extend jframe now this class will ack like a frame
@@ -44,6 +52,15 @@ public class TicTacToe extends JFrame{
         //set the action listener for all of the buttons
         for (JButton button : listOfButtons ){
             button.addActionListener(new ActionListener() {
+                /**
+                 * @param e
+                 * This is the command action where we have a method taking in the action listener class and we are just defining the method
+                 * we want to call in this way sort of like execute
+                 * This method calls the Methods.changeButtontext(button) - this is passing in the current button in the for each loop
+                 * Then the buttons are added to the list and the ai is activated if there is more then one tile open
+                 * Then it checks if there is a winner and if so it pops up a dialog letting you know who won
+                 * There is a last check that is seeing if it is a tie by saying there is no winner and no open spaces
+                 */
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     Methods.changeButtonText(button);
@@ -52,8 +69,14 @@ public class TicTacToe extends JFrame{
                     if(openSpaces() > 1)
                     {
                         simpleAIButtonChanger();
+                        addButtonsTextToList();
                     }
                     if(Methods.determineWinner(buttonText)){
+                        Methods.counter = 0;
+                        clearAllButtons();
+                    }else if(openSpaces() == 0 && !Methods.determineWinner(buttonText)){
+                        System.out.println("No one wins");
+                        Methods.setUpWinnerWindow(new JFrame("Winner Window"));
                         Methods.counter = 0;
                         clearAllButtons();
                     }
@@ -65,10 +88,8 @@ public class TicTacToe extends JFrame{
         }
 
     /**
-     * This method sets all the buttons in the arraylist to be empty
-     *
+     * This method sets all the buttons in the arraylist to be empty and clears the button text list
      */
-        //these populate or delete all of the button text in the list
         public void clearAllButtons(){
             this.buttonText.clear();
             button1.setText("");
@@ -84,6 +105,7 @@ public class TicTacToe extends JFrame{
 
     /**
      * This method adds all the buttons' text to the arraylist buttonText
+     * By first clearing it then readding all the texts it keeps the numbers of the buttons corresponding to the their place on the board
      */
         public void addButtonsTextToList() {
         buttonText.clear();
@@ -128,16 +150,13 @@ public class TicTacToe extends JFrame{
             {
                 randomIndex = rand.ints(0,9).findFirst().getAsInt();
             }
-            // TODO add a check to see if ai won
             Methods.changeButtonText(this.listOfButtons.get(randomIndex));
         }
 
     /**
      * This method goes through the buttontext arraylist and checks how many empty strings there are.
-     *
      * @return an int containing how many empty buttons there are
      */
-        //a method returning an int that is how many open spaces there are
         public int openSpaces(){
             int openSpaceCounter = 0;
             for (String text: buttonText)
