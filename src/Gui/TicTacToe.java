@@ -1,3 +1,4 @@
+package Gui;
 import Methods.Methods;
 
 import javax.swing.*;
