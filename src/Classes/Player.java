@@ -10,7 +10,7 @@ public class Player implements Observable {
 
     private String name;
 
-    private final ArrayList<Observer> observers;
+    private final ArrayList<Observer> observers; //Observers to track achievements for player
 
     public Player() {
         observers = new ArrayList<Observer>();
@@ -22,7 +22,7 @@ public class Player implements Observable {
     }
 
     @Override
-    public void notifyObservers(Event ev) {
+    public void notifyObservers(Event ev) { //Checks if any of the observers can make use of event
         for (Observer o: observers) {
             o.OnNotify(ev);
         }
