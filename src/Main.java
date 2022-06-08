@@ -1,11 +1,8 @@
 import Classes.Achievements;
 import Classes.Event;
-import Methods.Methods;
-import Observer.Observer;
+import Gui.UhOhGame;
 
-import javax.imageio.stream.FileCacheImageInputStream;
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import Classes.*;
