@@ -3,12 +3,8 @@ package Tests;
 import Gui.TicTacToe;
 import Methods.Methods;
 import org.junit.jupiter.api.*;
-
-
 import javax.swing.*;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class TicTacToeTest {
