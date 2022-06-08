@@ -28,9 +28,16 @@ public class MethodsTest {
     }//end of change button text
      */
     @Test
-    public void test1() {
+    public void counterEqual0_returnXorNot () {
         //test if counter is 0, does it set to x and then turn to o?
         //test if counter is 1, does it set to o
+
+
+        if (Methods.counter == 0) {
+            JButton button = new JButton();
+            assertEquals("X", Methods.changeButtonText(button) );
+        }
+
 
 
     }
