@@ -3,14 +3,10 @@ import Classes.Achievements;
 import Classes.Event;
 import Classes.Player;
 
-import java.awt.GridLayout;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class Methods {
@@ -32,7 +28,7 @@ public class Methods {
      * This method with put either an X or an O it just counts everyother one or click
      */
     //this sets x or o depending on whos turn it is
-    public static void changeButtonText(JButton button) {
+    public static String changeButtonText(JButton button) {
         if(button.getText().isBlank()) {
             if (counter == 0)
             {
@@ -44,8 +40,8 @@ public class Methods {
                 button.setText("O");
                 counter = 0;
             }
-            return;
         }
+        return button.getText();
     }//end of change button text
 
     /**
