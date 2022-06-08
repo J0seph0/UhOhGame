@@ -12,7 +12,7 @@ public class Achievements implements Observer {
         PLAYER_WINS_TTT("Player Wins in Tic-Tac-Toe"), PLAYER_LOSES_TTT("Player Lost in Tic-Tac-Toe"), TIMEOVER("Played for 10 seconds");
 
         private final String description;
-        private Achievement(final String desc) {
+        Achievement(final String desc) {
             this.description = desc;
         }
 
