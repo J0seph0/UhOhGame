@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class UhOhGame extends JFrame{
 
-    private JButton ticTacToeButton;
+    public JButton ticTacToeButton;
     private JPanel panel1;
     private JTextField intialText;
     private JLabel titleLabel;
