@@ -9,26 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MethodsTest {
 
-    /*
-    //this sets x or o depending on whos turn it is
-    public static void changeButtonText(JButton button) {
-        if(button.getText().isBlank()) {
-            if (counter == 0)
-            {
-                button.setText("X");
-                counter = 1;
-            }
-            else
-            {
-                button.setText("O");
-                counter = 0;
-            }
-            return;
-        }
-    }//end of change button text
-     */
     @Test
-    public void counterEqual0_returnXorNot () {
+    public void changeButtonText_Test_counterEqual0_returnXorNot () {
         //test if counter is 0, does it set to x and then turn to o?
         //test if counter is 1, does it set to o
         if (Methods.counter == 0) {
@@ -38,7 +20,7 @@ public class MethodsTest {
     }
 
     @Test
-    public void counterEqual1_returnO_orNot () {
+    public void cchangeButtonText_Test_ounterEqual1_returnO_orNot () {
         //test if counter is 1, does it set to o
         if (Methods.counter == 1) {
             JButton button = new JButton();

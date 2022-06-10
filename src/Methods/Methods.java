@@ -136,7 +136,4 @@ public class Methods {
     public static String whichIsWinner(){
         return  (counter == 0) ? "X" : "O";
     }
-
-
-
 }
