@@ -15,7 +15,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Here's a question you pick one?"/>
+          <text value="Hello! Welcome to our Playground! I hope you have fun!"/>
         </properties>
       </component>
       <component id="5fa3c" class="javax.swing.JLabel" binding="titleLabel">

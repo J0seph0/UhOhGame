@@ -34,6 +34,13 @@ public class MethodsTest {
         }
     }
 
+    @Test
+    public void whichIsWinner_Test_counterEqual1_returnO_orNot() {
+        if (Methods.counter == 1) {
+            assertEquals("O", Methods.whichIsWinner());
+        }
+    }
+
     ArrayList<String> buttons = new ArrayList<>();
 
     @Test
