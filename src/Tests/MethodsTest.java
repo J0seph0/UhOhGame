@@ -45,4 +45,5 @@ public class MethodsTest {
             assertEquals("O", Methods.changeButtonText(button) );
         }
     }
+
 }
