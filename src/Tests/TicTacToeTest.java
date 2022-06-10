@@ -44,7 +44,7 @@ class TicTacToeTest {
         window.listOfButtons.get(1).doClick();
         window.listOfButtons.get(2).doClick();
 
-        assertEquals();
+        //assertEquals();
     }
 
 }
