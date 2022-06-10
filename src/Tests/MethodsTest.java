@@ -109,5 +109,27 @@ public class MethodsTest {
         buttons.clear();
     }
 
+    @Test
+    public void determineWinner_Test_returnTrue_orNot_case3_246areEquals () {
+
+        //2, 4, 6 are equals
+        //winner is X
+        buttons.add(0, "O");
+        buttons.add(1, "O");
+        buttons.add(2, "X");
+        buttons.add(3, "O");
+        buttons.add(4, "X");
+        buttons.add(5, "O");
+        buttons.add(6, "X");
+        buttons.add(7, "O");
+        buttons.add(8, "O");
+
+
+        Boolean result = Methods.determineWinner(buttons);
+        assertTrue(result);
+        buttons.clear();
+    }
+
+
 
 }
