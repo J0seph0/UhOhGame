@@ -10,9 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MethodsTest {
 
     @Test
-    public void changeButtonText_Test_counterEqual0_returnXorNot () {
+    public void changeButtonText_Test_counterEqual0_returnX_orNot () {
         //test if counter is 0, does it set to x and then turn to o?
-        //test if counter is 1, does it set to o
         if (Methods.counter == 0) {
             JButton button = new JButton();
             assertEquals("X", Methods.changeButtonText(button) );
@@ -20,11 +19,18 @@ public class MethodsTest {
     }
 
     @Test
-    public void cchangeButtonText_Test_ounterEqual1_returnO_orNot () {
+    public void changeButtonText_Test_counterEqual1_returnO_orNot () {
         //test if counter is 1, does it set to o
         if (Methods.counter == 1) {
             JButton button = new JButton();
             assertEquals("O", Methods.changeButtonText(button) );
+        }
+    }
+
+    @Test
+    public void whichIsWinner_Test_counterEqual0_returnX_orNot () {
+        if (Methods.counter == 0) {
+            assertEquals("X", Methods.whichIsWinner());
         }
     }
 
