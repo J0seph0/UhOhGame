@@ -56,6 +56,8 @@ public class Methods {
         Player p1 = new Player();
         Achievements achievements = new Achievements();
         p1.addObserver(achievements);
+
+        //case 1
         //check for the top left corner
         if((buttons.get(0).equals(buttons.get(1)) && buttons.get(0).equals(buttons.get(2))) && buttons.get(0) != "" ||
                 (buttons.get(0).equals(buttons.get(3)) && buttons.get(0).equals(buttons.get(6)) && buttons.get(0) != ""))
@@ -75,6 +77,7 @@ public class Methods {
             return true;
         }
 
+        //case 2
         //check for the bottom right corner _|
         if((buttons.get(8).equals(buttons.get(7))  && buttons.get(8).equals(buttons.get(6))) & buttons.get(8) != ""  ||
                 (buttons.get(8).equals(buttons.get(5))  && buttons.get(8).equals(buttons.get(2)) && buttons.get(8) != ""))
@@ -94,6 +97,7 @@ public class Methods {
 
         }
 
+        //case 3
         //check for diagonal
         if((buttons.get(2).equals(buttons.get(4))  && buttons.get(4).equals(buttons.get(6))) & buttons.get(2) != ""  ||
                 (buttons.get(0).equals(buttons.get(4))  && buttons.get(8).equals(buttons.get(4)) && buttons.get(4) != "") ||
