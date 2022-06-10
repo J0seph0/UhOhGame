@@ -71,5 +71,24 @@ public class MethodsTest {
         buttons.clear();
     }
 
+    @Test
+    public void determineWinner_Test_returnTrue_orNot_case2_678areEquals () {
+
+        //winner is X
+        buttons.add(0, "O");
+        buttons.add(1, "O");
+        buttons.add(2, "X");
+        buttons.add(3, "O");
+        buttons.add(4, "X");
+        buttons.add(5, "O");
+        buttons.add(6, "X");
+        buttons.add(7, "X");
+        buttons.add(8, "X");
+
+        Boolean result = Methods.determineWinner(buttons);
+        assertTrue(result);
+        buttons.clear();
+    }
+
 
 }
