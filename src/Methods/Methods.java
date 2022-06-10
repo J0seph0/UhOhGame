@@ -94,7 +94,6 @@ public class Methods {
             //makes a new window to tell the winner of the game
             setUpWinnerWindow(new JFrame("Winner Window"));
             return true;
-
         }
 
         //case 3
