@@ -34,4 +34,28 @@ public class MethodsTest {
         }
     }
 
+    @Test
+    public void determineWinner_Test_returnTrue_orNot_case1 () {
+        /*
+        check for the top left corner
+        if((buttons.get(0).equals(buttons.get(1)) && buttons.get(0).equals(buttons.get(2))) && buttons.get(0) != "" ||
+                (buttons.get(0).equals(buttons.get(3)) && buttons.get(0).equals(buttons.get(6)) && buttons.get(0) != ""))
+        {
+         */
+        ArrayList<String> buttons = new ArrayList<>();
+        buttons.add(0, "O");
+        buttons.add(1, "O");
+        buttons.add(2, "O");
+        buttons.add(3, "O");
+        buttons.add(4, "X");
+        buttons.add(5, "X");
+        buttons.add(6, "O");
+        Boolean result = Methods.determineWinner(buttons);
+        {
+            assertTrue(result);
+        }
+    }
+
+
+
 }
