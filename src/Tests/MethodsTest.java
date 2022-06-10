@@ -38,7 +38,7 @@ public class MethodsTest {
     }
 
     @Test
-    public void counterEqual1_returnOorNot () {
+    public void counterEqual1_returnO_orNot () {
         //test if counter is 1, does it set to o
         if (Methods.counter == 1) {
             JButton button = new JButton();
