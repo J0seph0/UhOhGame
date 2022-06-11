@@ -24,9 +24,12 @@ public class Achievements implements Observer {
     private final ArrayList<Achievement> achievements = new ArrayList<>();
 
 
-
+    /**
+     * @param ev
+     * Pass an event, and unlock corresponding achievement by notifying Observers.
+     */
     @Override
-    public void OnNotify(Event ev) { //Pass an event, and unlock corresponding achievement by notifying Observers.
+    public void OnNotify(Event ev) {
         switch (ev) {
             case TIME_10:
                 if(achCheck[0] != true) {
@@ -49,7 +52,11 @@ public class Achievements implements Observer {
         }
     }
 
-    public void unlock(Achievement ach) { //Unlocks Achievements
+    /**
+     * @param ach
+     * Unlocks Achievements
+     */
+    public void unlock(Achievement ach) {
         if(!achievements.contains(ach)) {
             achievements.add(ach);
             System.out.println("ACHIEVEMENT UNLOCKED: " + ach.getDescription());

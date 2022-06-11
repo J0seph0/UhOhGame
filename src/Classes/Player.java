@@ -10,7 +10,10 @@ public class Player implements Observable {
 
     private String name;
 
-    private final ArrayList<Observer> observers; //Observers to track achievements for player
+    /**
+     * Observers to track achievements for player
+     */
+    private final ArrayList<Observer> observers;
 
     public Player() {
         observers = new ArrayList<Observer>();
@@ -21,8 +24,12 @@ public class Player implements Observable {
         observers.add(o);
     }
 
+    /**
+     * @param ev
+     * Checks if any of the observers can make use of event
+     */
     @Override
-    public void notifyObservers(Event ev) { //Checks if any of the observers can make use of event
+    public void notifyObservers(Event ev) {
         for (Observer o: observers) {
             o.OnNotify(ev);
         }
