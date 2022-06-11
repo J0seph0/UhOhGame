@@ -84,6 +84,7 @@ public class Methods {
         {
             System.out.println(buttons.get(8) + " is the winner!");
             //observer checking
+
             if(buttons.get(8).equals("X")) {
                 p1.notifyObservers(Event.PLAYER_WINS);
             } else {
