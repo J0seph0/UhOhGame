@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Achievements implements Observer {
 
-    static boolean [] achCheck = new boolean[3];
+    static boolean [] achCheck = new boolean[3]; //Make sure achievements don't re-unlock in same session
 
     public enum Achievement {
         PLAYER_WINS_TTT("Player Wins in Tic-Tac-Toe"), PLAYER_LOSES_TTT("Player Lost in Tic-Tac-Toe"), TIMEOVER("Played for 10 seconds");
@@ -26,7 +26,7 @@ public class Achievements implements Observer {
 
 
     @Override
-    public void OnNotify(Event ev) {
+    public void OnNotify(Event ev) { //Pass an event, and unlock corresponding achievement by notifying Observers.
         switch (ev) {
             case TIME_10:
                 if(achCheck[0] != true) {
@@ -49,7 +49,7 @@ public class Achievements implements Observer {
         }
     }
 
-    public void unlock(Achievement ach) {
+    public void unlock(Achievement ach) { //Unlocks Achievements
         if(!achievements.contains(ach)) {
             achievements.add(ach);
             System.out.println("ACHIEVEMENT UNLOCKED: " + ach.getDescription());
